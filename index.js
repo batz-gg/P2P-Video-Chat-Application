@@ -1,4 +1,4 @@
-/*
+/*.
  * Created by Lucas Chapman
  *
  * This project was based on https://image-search-abstraction-layer.freecodecamp.rocks/
