@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Performs image searches using a Google Custom Search Engine."
+    />
+    <meta
+      property="og:image"
+      content="https://imagehosting.lchap701.repl.co/images/1638908707853.png"
+    />
+    <meta property="og:title" content="Image Search Abstraction Layer" />
+    <meta
+      property="og:url"
+      content="https://Build-an-Image-Search-Abstraction-Layer.lchap701.repl.co/cse/"
+    />
+    <meta property="og:site_name" content="Replit" />
+    <meta
+      property="og:description"
+      content="A project that was created to earn a freeCodeCamp certificate which is used to perform image searches using Google."
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon.io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon.io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon.io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon.io/site.webmanifest" />
+    <title>Google Custom Search Engine</title>
+    <script
+      src="https://kit.fontawesome.com/855ee508c4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova&family=Castoro:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.min.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" title="Home"><i class="fas fa-home"></i> Home</a>
+        <a href="/cse/" title="Google Custom Search Engine" class="active"
+          ><i class="fab fa-google"></i> Google Custom Search Engine</a
+        >
+      </nav>
+    </header>
+
+    <div id="container">
+      <h1>Google Custom Search Engine</h1>
+      <p>A simplified way to search for images</p>
+      <hr />
+      <div id="searchbox-container">
+        <script
+          async
+          src="https://cse.google.com/cse.js?cx=550da5a5df219eebf"
+        ></script>
+        <div class="gcse-searchbox-only"></div>
+      </div>
+
+      <p>
+        <b>Note</b>: This page uses my
+        <abbr title="Custom Search Engine">CSE</abbr> which is provided by
+        Google for the purposes of searching for content and has it's own URL
+      </p>
+    </div>
+  </body>
+</html>

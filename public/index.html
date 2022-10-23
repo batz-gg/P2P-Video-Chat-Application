@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Performs image searches using Google." />
+    <meta
+      property="og:image"
+      content="https://storage.googleapis.com/replit/images/1625610081244_44b2b780f1e2f28a9aba78a03f1f303f.png"
+    />
+    <meta property="og:title" content="Image Search Abstraction Layer" />
+    <meta
+      property="og:url"
+      content="https://Build-an-Image-Search-Abstraction-Layer.lchap701.repl.co"
+    />
+    <meta property="og:site_name" content="Replit" />
+    <meta
+      property="og:description"
+      content="A project that was created to earn a freeCodeCamp certificate which is used to perform image searches using Google."
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon.io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon.io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon.io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon.io/site.webmanifest" />
+    <title>Image Search Abstraction Layer</title>
+    <script
+      src="https://kit.fontawesome.com/855ee508c4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova&family=Castoro:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.min.css" type="text/css" />
+    <script src="/js/formHandler.min.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" title="Home" class="active"
+          ><i class="fas fa-home"></i> Home</a
+        >
+        <a href="/cse/" title="Google Custom Search Engine"
+          ><i class="fab fa-google"></i> Google Custom Search Engine</a
+        >
+      </nav>
+    </header>
+
+    <div id="container">
+      <h1>Image Search Abstraction Layer</h1>
+      <p>
+        Search for images across the internet or view recent searches using
+        Google's
+        <a
+          href="https://developers.google.com/custom-search/v1/reference/rest/v1/cse/list"
+          target="_blank"
+          >Custom Search JSON API</a
+        >
+      </p>
+      <hr />
+
+      <form
+        action="/query/"
+        name="query-form"
+        method="POST"
+        onsubmit="submitHandler()"
+      >
+        <fieldset>
+          <legend>Search</legend>
+
+          <div class="col">
+            <label for="query">Query:</label>
+            <input list="terms" name="query" id="query" required />
+
+            <!-- Displays the most recent terms (for this microservice)  -->
+            <datalist id="terms"></datalist>
+          </div>
+
+          <div class="col">
+            <label for="page">Page:</label>
+            <input
+              type="number"
+              name="page"
+              id="page"
+              required
+              min="1"
+              max="10"
+              value="1"
+            />
+          </div>
+
+          <div class="col">
+            <label for="size">Image Size:</label>
+            <select id="size" name="size">
+              <option value="imgSizeUndefined">All</option>
+              <option value="ICON">Icon</option>
+              <option value="SMALL">Small</option>
+              <option value="MEDIUM">Medium</option>
+              <option value="LARGE">Large</option>
+              <option value="XLARGE">XL</option>
+              <option value="XXLARGE">XXL</option>
+              <option value="HUGE">Huge</option>
+            </select>
+          </div>
+
+          <div class="col">
+            <label for="type">Image Type:</label>
+            <select id="type" name="type">
+              <option value="imgTypeUndefined">Any</option>
+              <option value="clipart">Clipart</option>
+              <option value="face">Face</option>
+              <option value="lineart">Lineart</option>
+              <option value="stock">Stock</option>
+              <option value="photo">Photo</option>
+              <option value="animated">Animated</option>
+            </select>
+          </div>
+
+          <button type="submit"><i class="fas fa-search"></i> Search</button>
+
+          <div class="break">
+            <a href="/recent/">Most recent searches</a>
+            <label for="safe-search">
+              Enable SafeSearch
+              <input
+                type="checkbox"
+                checked
+                onchange="safeSearchHandler()"
+                name="safe-search"
+                id="safe-search"
+                value="active"
+            /></label>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
